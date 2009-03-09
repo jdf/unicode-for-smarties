@@ -1,0 +1,17 @@
+h2. Unicode for Smarties
+
+This is a slide deck to accompany a talk I've been giving at IBM.
+The idea is to spend an hour giving technially-inclined people
+the conceptual foundation they need to understand Unicode, and
+to solve Unicode-related problems they might encounter in their
+day-to-day work.
+
+A couple of the illustrations are taken from the Unicode standard,
+and are copyright (c)The Unicode Consortium.
+
+Otherwise, the slide deck itself is licensed 
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/88x31.png" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Unicode for Smarties</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 United States License</a>.
+
+Jonathan Feinberg
+jdf@us.ibm.com
