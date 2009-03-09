@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Unicode for Smarties</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20090127" />
+<meta name="author" content="Jonathan Feinberg" />
+<meta name="company" content="IBM Research" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css"
+	media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css"
+	media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css"
+	media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css"
+	media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+a {
+	padding-right: 16px;
+	background: right center url(link.png) no-repeat;
+}
+
+.unichar {
+	font-variant: small-caps;
+	border: 1px solid #CCFFCC;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin: 4px;
+}
+
+.f { float: left; }
+.current .unichar { color: black ! important }
+
+.cp {
+	font-family: Consolas, monospace;
+	font-size: 90%;
+	color: #660000;
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>CUE/January 27, 2009</h1>
+<h2>Unicode for Smarties</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Unicode for Smarties</h1>
+<h3>Jonathan Feinberg</h3>
+<h4>IBM Research, CUE</h4>
+</div>
+
+<div class="slide">
+<h1>What is Unicode?</h1>
+<p>Unicode is a standard that provides two important things:</p>
+<ol class="incremental">
+	<li>A universal <i>coded character set</i></li>
+	<li>A specification for representing the characters in that set as
+		byte sequences</li>
+</ol>
+<div class="handout"></div>
+</div>
+
+<div class="slide">
+<h1>It is <i>universal</i></h1>
+<div style="text-align: center">
+<p style="text-align: center; margin: auto; font-size: 100px">0x10FFFF</p>
+</div>
+<p class="incremental">There's room for 0x10FFFF (1,114,112) possible characters, of
+which 99,024 are currently used.</p>
+<p class="incremental">(that's about 20 bits)</p>
+<div class="handout">
+<p>There's room for 0x10FFFF (1,114,112) possible characters, of
+which 99,024 are currently used.</p>
+<p>For example, vs. ASCII (127), ISO-8859-1 (256), WINDOWS-1252
+(256), etc.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>It is <i>unambiguous</i> and <i>efficient</i></h1>
+<p>Unicode text is relatively simple and quick to parse.</p>
+<div class="handout">ISO-2022 requires a stateful parser to detect
+sequences of escape characters, and in which a given octet can mean
+completely different things in different contexts.</div>
+</div>
+
+<div class="slide">
+<h1>The Unicode &ldquo;coded character set&rdquo;</h1>
+<p>What <i>is</i> a &ldquo;coded character set&rdquo;?</p>
+</div>
+
+<div class="slide">
+<h1>The Unicode &ldquo;coded character set&rdquo;</h1>
+<p>What <i>is</i> a &ldquo;character set&rdquo;?</p>
+</div>
+
+<div class="slide">
+<h1>The Unicode &ldquo;coded character set&rdquo;</h1>
+<p>OK, then: what <i>is</i> a &ldquo;character&rdquo;&#8253;</p>
+<ul class="incremental">
+	<li>Characters are entirely <i>abstract</i></li>
+	<li>Characters are <b>not</b> glyphs</li>
+	<li>&ldquo;Characters are the abstract representations of the
+	smallest components of written language that have semantic
+	value.&rdquo;</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>The Unicode &ldquo;coded character set&rdquo;</h1>
+<p>OK, then: what <i>is</i> a &ldquo;character&rdquo;&#8253;</p>
+<ul>
+	<li>Characters are entirely <i>abstract</i></li>
+	<li>Characters are <b>not</b> glyphs</li>
+	<li>&ldquo;Characters are the abstract representations of the
+	smallest components of written language that have semantic
+	value.&rdquo;</li>
+	<li>Concretely, Unicode characters have a <i>name</i> and many <i>properties</i></li>
+</ul>
+<p>Examples:</p>
+<div class="incremental unichar f">latin&nbsp;capital&nbsp;letter&nbsp;a</div>
+<div class="incremental unichar f">tibetan&nbsp;sign&nbsp;sna&nbsp;ldan</div>
+<div class="incremental unichar f">braille&nbsp;pattern&nbsp;dots-13568</div>
+<div class="incremental unichar f">word&nbsp;joiner</div>
+<div class="incremental unichar f">skull&nbsp;and&nbsp;crossbones&nbsp;</div>
+</div>
+
+<div class="slide" style="clear:both">
+<h1>SKULL AND CROSSBONES, I SAY!</h1>
+<div style="text-align: center">
+<p style="text-align: center; margin: auto; font-size: 300px">&#x2620;</p>
+</div>
+</div>
+
+<div class="slide" style="clear:both">
+<h1>Text elements vs. characters</h1>
+<div style="text-align: center">
+<img src="elements_not_chars.png"/>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Characters and Glyphs</h1>
+<div style="text-align: center">
+<img src="chars-vs-glyphs.png" alt="Examples of the relationship between characters and glyphs"/>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>The Unicode &ldquo;coded character set&rdquo;</h1>
+<p>What <i>is</i> a &ldquo;character set&rdquo;?</p>
+<p class="incremental">
+	A <i>character set</i> is yet another abstraction: it is a
+	<i>set</i> of <i>characters</i>, an unordered collection
+	of the atoms of written language.
+</p>
+<p class="incremental">
+	It's also known as a <i>character repertoire</i>.
+</p>
+</div>
+
+<div class="slide">
+	<h1>The Unicode &ldquo;coded character set&rdquo;</h1>
+	<p>What <i>is</i> a &ldquo;coded character set&rdquo;? 
+		A <i>coded character set</i> assigns a unique
+		integer to each character from a <i>character set</i>.
+	</p>
+	<p class="incremental">
+		The range of numbers used to code the abstract characters
+		is called the <i>codespace</i>.
+	</p>
+	<p class="incremental">
+		A particular integer from the codespace is a <i>code point</i>.
+	</p>
+	<p class="incremental">
+		Once a character is <i>assigned</i> to a a code point,
+		it is an <i>encoded character</i>.
+	</p>
+</div>
+
+<div class="slide">
+	<h1>The Unicode &ldquo;coded character set&rdquo;</h1>
+	<p>What <i>is</i> a &ldquo;coded character set&rdquo;? 
+		A <i>coded character set</i> assigns a unique
+		integer to each character from a <i>character set</i>.
+	</p>
+	<p>Examples:</p>
+	<p><span class="unichar"><span class="cp">U+0041</span>&nbsp;latin&nbsp;capital&nbsp;letter&nbsp;a</span></p>
+	<p><span class="unichar"><span class="cp">U+0F83</span>&nbsp;tibetan&nbsp;sign&nbsp;sna&nbsp;ldan</span></p>
+	<p><span class="unichar"><span class="cp">U+28B5</span>&nbsp;braille&nbsp;pattern&nbsp;dots-13568</span></p>
+	<p><span class="unichar"><span class="cp">U+2060</span>&nbsp;word&nbsp;joiner</span></p>
+	<p><span class="unichar"><span class="cp">U+2620</span>&nbsp;skull&nbsp;and&nbsp;crossbones&nbsp;</span></p>
+</div>
+
+<div class="slide">
+	<h1>Text Elements</h1>
+	<p>A Unicode <i>text element</i> is a sequence of encoded characters.</p>
+</div>
+
+<div class="slide">
+	<h1>From a text to some pixels</h1>
+	<div style="text-align:center"><img src="text-to-glyphs.png" alt="How a unicode text might be rendered"/></div>
+</div>
+
+<div class="slide">
+	<h1>Allocation of Code Points</h1>
+	<p>
+		Divided into 16 64K <i>planes</i>.
+	</p>
+	<ul class="incremental">
+		<li>Plane 0: BMP</li>
+		<li>Plane 1: SMP</li>
+		<li>Plane 2: SIP</li>
+		<li>Plane 3-13: reserved</li>
+		<li>Plane 14: SSP</li>
+		<li>Planes 15 &amp; 16: Private Use Planes</li>
+	</ul>
+	<div class="handout">
+		<p>BMP: basic multilingual - comon-use chars for all modern scripts, many historical and rare</p>
+		<p>SMP: supplementary multilingual - historic, invented, e.g., Gothic, musical symbols.
+		Many future scripts will wind up here.</p>
+		<p>SIP: supplementary ideographic - for CJK mostly rare, historic, some cantonese</p>
+		<p>SSP: supplementary special purpose - spillover for format control characters that don't fit in BMP</p>
+	</div>
+</div>
+
+<div class="slide">
+	<h1>The BMP</h1>
+	<div style="text-align: center">
+	<img src="unicode-viz.png" alt="Map of unicode blocks"/>
+	<p>The Basic Multilingual Plane</p>
+	</div>
+</div>
+
+
+<div class="slide">
+<h1>What is Unicode? (Reprise)</h1>
+<p>Unicode is a standard that provides two important things:</p>
+<ol class="incremental">
+	<li>A universal <i>coded character set</i></li>
+	<li>A specification for representing the characters in that set as
+		byte sequences</li>
+</ol>
+<div class="handout"></div>
+</div>
+
+<div class="slide">
+<h1>What is Unicode? (Reprise)</h1>
+<p>Unicode is a standard that provides two important things:</p>
+<ol>
+	<li>A universal <i>coded character set</i></li>
+	<li><b>Three specifications</b> for representing the characters in that set as
+		byte sequences: the <i>encoding forms</i> UTF-32, UTF-16, and UTF-8</li>
+</ol>
+</div>
+
+<div class="slide">
+<h1>The Encoding Forms: Code Units</h1>
+<p>A Unicode <i>string</i> is a sequence of <i>code units</i>. The number
+following the &ldquo;UTF&rdquo; refers to the width, in bits, of
+a code unit for that encoding form.</p>
+</div>
+
+<div class="slide">
+<h1>The Encoding Forms: Non-overlap</h1>
+<p><i>Non-overlap</i> is the top-priority design 
+constraint on Unicode encoding forms. It means two things:</p>
+<ol class="incremental">
+	<li>none of the ranges of values for lead, trail, or single code units overlap</li>
+	<li>characters have determinate boundaries (self-synchronization; corruption resistance)</li>
+</ol>
+</div>
+
+<div class="slide">
+<h1>Why non-overlap is desirable</h1>
+	<p>Real-world example: Windows CP-932 encoding</p>
+	<div style="text-align: center">
+		<img style="margin-bottom:24px" src="windows-932-1.png" alt="Characters with overlapping code units"/>
+		<br/>
+		<img src="windows-932-2.png" alt="illustration of inefficiencies in decoding same"/>
+	</div>
+</div>
+
+<div class="slide">
+<h1>Unicode Transformation Formats</h1>
+<ul>
+	<li>UTF-32: simple; fat</li>
+	<li>UTF-16: optimized for BMP; balanced in efficiency and simplicity; sorts wrong</li>
+	<li>UTF-8: optimized for Latin; ASCII transparent; sorts correctly</li>
+</ul>
+</div>
+
+<div class="slide">
+	<h1>Pragmatic Unicode</h1>
+	<p>
+		Deal with text as an abstract sequence of Unicode code points.
+		Do not think about bytes, chars, or unsigned integers.
+	</p>
+	<p class="incremental">
+		Excellent Unicode support: Python 3, Perl 5.8.x
+	</p>
+	<p class="incremental">
+		Good enough Unicode support: Java, C#, C, C++, Python 2, Perl 5.6.x, O&apos;Caml, Haskell
+	</p>
+	<p class="incremental">
+		Not impossible: O&apos;Caml
+	</p>
+	<p class="incremental">
+		Feh: Ruby, Erlang
+	</p>
+</div>
+
+<div class="slide">
+<h1>Pragmatic Encoding for the Java Wonk</h1>
+<p>
+	Briefly:
+</p>
+<ul class="incremental">
+	<li>
+		<code>InputStream</code>/<code>OutputStream</code> are <i>plumbing</i>.
+		Don't use them for reading and writing <i>text</i>.
+	</li>
+	<li>
+		Use the <code>Reader</code>/<code>Writer</code> classes.
+	</li>
+	<li>
+		Be explicit about the encoding you wish to use, or else you'll get
+		the default (windows-1252 on my box).
+	</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>How Not To Write Text</h1>
+<h2>No.</h2>
+<pre><code class="bad">final String someThaiText = "Thai: \u0e01\u0e02\u0e03";
+PrintStream out = 
+    new PrintStream(new FileOutputStream("garbage.txt"));
+out.println(someThaiText);
+out.close();</code></pre>
+<h2>Result:</h2>
+<pre>54 68 61 69 3A 20 3F 3F 3F 0D 0A</pre>
+<pre> T  h  a  i  :  _ ?  ?  ? cr lf</pre>
+</div>
+
+<div class="slide">
+<h1>How Not To Write Text, Part &#xFFFD;</h1>
+<h2>No.</h2>
+<pre><code class="bad">final String someThaiText = "Thai: \u0e01\u0e02\u0e03";
+PrintWriter out = new PrintWriter(
+    new OutputStreamWriter(new FileOutputStream("thai.txt")));
+out.println(someThaiText);
+out.close();</code></pre>
+<h2>Result:</h2>
+<pre>54 68 61 69 3A 20 3F 3F 3F 0D 0A</pre>
+<pre> T  h  a  i  :  _ ?  ?  ? cr lf</pre>
+</div>
+
+<div class="slide">
+<h1>How To Write Text</h1>
+<h2>Yes.</h2>
+<pre><code >final String someThaiText = "Thai: \u0e01\u0e02\u0e03";
+PrintWriter out = new PrintWriter(
+    new OutputStreamWriter(
+        new FileOutputStream("thai.txt")<span style="color:orange">, "UTF-8"</span>));
+out.println(someThaiText);
+out.close();</code></pre>
+<h2>Result:</h2>
+<pre>54 68 61 69 3A 20 E0 B8 81 E0 B8 82 E0 B8 83 0D 0A</pre>
+<pre> T  h  a  i  :  _        ก        ข        ฃ cr lf</pre>
+</div>
+
+</div>
+
+</body>
+</html>
